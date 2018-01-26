@@ -45,8 +45,8 @@ btnCipher.addEventListener('click',(e) => {
   e.preventDefault();
   let valueText = text.value;
   if(isValidate(valueText)) {
-    textValue.textContent = text.value;
-    result.textContent = cipher(valueText);
+    textValue.textContent = `El texto ingresado es: ${text.value}`;
+    result.textContent = `El resultado es: ${cipher(valueText)}`;
     clean();
   }
 })
@@ -55,8 +55,8 @@ bntDecipher.addEventListener('click',(e) => {
   e.preventDefault();
   let valueText = text.value;
   if(isValidate(valueText)) {
-    textValue.textContent = text.value;
-    result.textContent = deCipher(valueText);
+    textValue.textContent = `El texto ingresado es:  ${text.value}`;
+    result.textContent = `El resultado es: ${deCipher(valueText)}`;
     clean();
   }
 })
