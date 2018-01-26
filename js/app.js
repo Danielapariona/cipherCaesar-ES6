@@ -23,6 +23,11 @@ let deCipher = str => {
   return strDecipher;
 }
 
+let clean = () => {
+  text.value = '';
+  text.focus();
+}
+
 let isValidate = str => { // Verifica que la entrada no sea un número o esté vacío
   const regexp = /^[A-Z]|[a-z]$/;
   for (let i = 0; i < str.length; i++) {
@@ -34,12 +39,15 @@ const text = document.getElementById('texto-js');
 const btnCipher = document.getElementById('cipher-js');
 const bntDecipher = document.getElementById('decipher-js');
 const result = document.getElementById('result-js');
+const textValue = document.getElementById('text-value-js');
 
 btnCipher.addEventListener('click',(e) => {
   e.preventDefault();
   let valueText = text.value;
   if(isValidate(valueText)) {
+    textValue.textContent = text.value;
     result.textContent = cipher(valueText);
+    clean();
   }
 })
 
@@ -47,6 +55,8 @@ bntDecipher.addEventListener('click',(e) => {
   e.preventDefault();
   let valueText = text.value;
   if(isValidate(valueText)) {
+    textValue.textContent = text.value;
     result.textContent = deCipher(valueText);
+    clean();
   }
 })
